@@ -1,0 +1,35 @@
+
+main.main > section.main-section{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main.main > section.main-section > div.section-content{
+    width: 60%;
+    height: 80%;
+}
+
+main.main > section.main-section > div.section-content > ul.content-list > li{
+    list-style: none;
+}
+
+main.main > section.main-section > div.section-content > ul.content-list > li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+main.main > section.main-section > div.section-content > ul.content-list > li > div{
+    display: flex;
+    gap: 10px;
+}
+
+
+main.main > section.main-section > div.section-content > ul.content-list {
+}
+
+main.main > section.main-section > div.section-content > button.content-button{
+    width: 20%;
+}
