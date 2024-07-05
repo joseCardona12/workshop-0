@@ -89,7 +89,7 @@ class TaskManager { // This is class TaskManager
 }
 
 document.addEventListener("DOMContentLoaded", ()=>{ // When domContentLaded is true execute code
-    const $taskManager = new TaskManager(); // Instantiate class TaskManager 
+    const taskManager = new TaskManager(); // Instantiate class TaskManager 
     const $addTaskButton = document.getElementById("add-task") // Obtain elemnt button with id "add-task"
 
     $addTaskButton.addEventListener("click", ()=>{ // Add event elemnt button 
@@ -98,7 +98,7 @@ document.addEventListener("DOMContentLoaded", ()=>{ // When domContentLaded is t
             console.log({message: "Error. Please, complete the field"});
             return;
         }
-        $taskManager.addTask($newTaskValue);
+        taskManager.addTask($newTaskValue);
         document.getElementById("new-task").value = '';
     })
     
