@@ -1,10 +1,6 @@
 ## Informe sobre el ejercicio Task
-1. No Estaba creado los elementos correspondientes en el archivo html para obtener desde javascript
-    #### Solución
-    - Crear los elementos ul - list 
-    - Crear el input para obtener el valor del usuario 
-    - Crear el botón para agregar la tarea
-2. Al momento de recorrer los tasks en el método __renderTasks__ se visualizaba un error, debido a que la función que se llamaba no existía en el objeto __task__.
+
+1. Al momento de recorrer los tasks en el método __renderTasks__ se visualizaba un error, debido a que la función que se llamaba no existía en el objeto __task__.
  #### Solución 
  - Crear una nueva propiedad al objeto task __toggle__ para guardar la referencia del método __toggleComplete()__
  - Utilizar la función bind que permite mantener el this especifico del objeto, que en este caso hace referencia a la clase Task.
@@ -12,11 +8,12 @@
  - Crear un elemento __BUTTON__ para agregar el envento y ejecutar el método
  - Llamar el método que contiene la acción necesaria para el cambio
  - Llamar la propiedad __toggle__ que contiene la función y ejecutar directamente.
-3. Corregir los estandares de los elementos html y la manera correcta crear los elementos html desde javascript
+
+2. Corregir los estandares de los elementos html y la manera correcta crear los elementos html desde javascript
  #### Solución 
  - Cambiar los nombres de las varibales con el signo __$__ y utilizar upperCase para la creación de los elementos html desde javascript
 
-4. Extra (Agregar validación a los errores por no encotrar los elementos)
+3. Extra (Agregar validación a los errores por no encotrar los elementos)
 
 ### Explicación del código línea por línea
  ```
