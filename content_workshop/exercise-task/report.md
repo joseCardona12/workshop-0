@@ -1,4 +1,4 @@
-## Informe sobre el ejericio Task
+## Informe sobre el ejercicio Task
 1. No Estaba creado los elementos correspondientes en el archivo html para obtener desde javascript
     #### Solución
     - Crear los elementos ul - list 
