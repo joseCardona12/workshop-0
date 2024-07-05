@@ -11,8 +11,7 @@
  - Agregar task por método push con los nuevos cambios
  - Crear un elemento __BUTTON__ para agregar el envento y ejecutar el método
  - Llamar el método que contiene la acción necesaria para el cambio
- - Llamar la propiedad __toggle__ que contiene la función y ejecutar directamente para proceder con el cambio 
-
+ - Llamar la propiedad __toggle__ que contiene la función y ejecutar directamente.
 3. Corregir los estandares de los elementos html y la manera correcta crear los elementos html desde javascript
  #### Solución 
  - Cambiar los nombres de las varibales con el signo __$__ y utilizar upperCase para la creación de los elementos html desde javascript
