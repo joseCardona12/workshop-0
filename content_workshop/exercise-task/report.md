@@ -20,7 +20,7 @@
 
 ### Explicación del código línea por línea
  ```
- class Task {
+class Task {
     constructor(id, description, completed = false){ // Is a special function
         this.id = id;
         this.description = description;
@@ -44,6 +44,7 @@ class TaskManager { // This is class TaskManager
                     : 1;
         const task = new Task(id,description); // Instantiate Task for use. Require two parameter
         task["toggle"] = task.toggleComplete.bind(task); // Is used bind for create new function that has te this configured to specific value - object
+        console.log(task)
         this.tasks.push(task) // Add task to tasks 
         this.saveTasks(); // Save tasks use method saveTasks. This function use localStogare for save tasks
         this.renderTasks(); // Render task
@@ -76,15 +77,16 @@ class TaskManager { // This is class TaskManager
             const $itemList = document.createElement("LI"); // Create new element LI
             const $itemButtonComplete = document.createElement("BUTTON"); // Create new element button
             const $deleteButton = document.createElement("BUTTON"); // Create new element button
+            const $contentItemList = document.createElement("DIV");
             $itemList.textContent = task.description; // Change text content of element html for description
-            $itemButtonComplete.textContent = "Not complete";
+            $itemButtonComplete.textContent = task.completed ? 'complete' : 'Not complete'
             $itemList.className = task.completed // If is true execute code true
                               ? 'item-complete'
                               : '';
 
             $itemButtonComplete.addEventListener("click", ()=>{ // Add event to element button for change state complete
                this.toggleTaskComplete(task.id); // Call function toggle
-               $itemButtonComplete.textContent = "Complete"; // Change textContent of element
+              ; // Change textContent of element
             })
 
             $deleteButton.className = "delete-button";
@@ -93,9 +95,15 @@ class TaskManager { // This is class TaskManager
                 e.stopPropagation();
                 this.deleteTask(task.id)
             });
+
+            // Add class like attribute to elements
+            $itemButtonComplete.setAttribute("class", "btn btn-primary mt-2");
+            $deleteButton.setAttribute("class", "btn btn-danger mt-2");
+            $itemList.setAttribute("class", "description")
             
-            $itemList.appendChild($deleteButton); // Add create elements to father element
-            $itemList.appendChild($itemButtonComplete);
+            $contentItemList.appendChild($deleteButton); // Add elements to father element
+            $contentItemList.appendChild($itemButtonComplete);
+            $itemList.appendChild($contentItemList)
             $taskList.appendChild($itemList)
             }
         )
