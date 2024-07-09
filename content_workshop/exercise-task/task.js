@@ -21,8 +21,8 @@ class TaskManager { // This is class TaskManager
                     ? this.tasks[this.tasks.length -1].id + 1 // Obtain last position of array 
                     : 1;
         const task = new Task(id,description); // Instantiate Task for use. Require two parameter
-        task["toggle"] = task.toggleComplete.bind(task); // Is used bind for create new function that has te this configured to specific value - object
-        console.log(task)
+        // task["toggle"] = task.toggleComplete.bind(task); // Is used bind for create new function that has te this configured to specific value - object
+        // console.log(task)
         this.tasks.push(task) // Add task to tasks 
         this.saveTasks(); // Save tasks use method saveTasks. This function use localStogare for save tasks
         this.renderTasks(); // Render task
@@ -38,7 +38,10 @@ class TaskManager { // This is class TaskManager
             console.log({message: "Error. Task not found"});
             return;
         }
-        task.toggle(); // Change state complete task 
+        const newInstance = new Task(task.id,task.description,task.completed);
+        newInstance.toggleComplete();
+        this.tasks = this.tasks.map(t=>t.id === id ? newInstance: t);
+        // task.toggle(); // Change state complete task 
         this.saveTasks();
         this.renderTasks();
     }
@@ -63,7 +66,7 @@ class TaskManager { // This is class TaskManager
                               : '';
 
             $itemButtonComplete.addEventListener("click", ()=>{ // Add event to element button for change state complete
-               this.toggleTaskComplete(task.id); // Call function toggle
+                return this.toggleTaskComplete(task.id); // Call function toggle
               ; // Change textContent of element
             })
 

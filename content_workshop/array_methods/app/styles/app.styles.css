@@ -1,0 +1,22 @@
+section.section-products{
+    width: 100%;
+}
+
+section.section-products > div.products-content{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+
+}
+
+section.section-products > div.products-content > article.content-article{
+    width: calc((100% / 4) - 20px);
+    padding: 10px;
+}
+
+
+section.section-products > div.products-content > article.content-article > div.article-header{
+    height: 100px;
+    background-color: rebeccapurpled;
+}
