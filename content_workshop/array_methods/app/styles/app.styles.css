@@ -1,10 +1,22 @@
 section.section-products{
     width: 100%;
+    position: relative;
+}
+
+section.section-products > div.products-totalPrice{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+section.section-products > form.products-form{
+    margin-bottom: 30px;
 }
 
 section.section-products > div.products-content{
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     flex-wrap: wrap;
     gap: 20px;
 
@@ -19,4 +31,14 @@ section.section-products > div.products-content > article.content-article{
 section.section-products > div.products-content > article.content-article > div.article-header{
     height: 100px;
     background-color: rebeccapurpled;
+}
+
+section.section-products > div.available-products{
+    position: absolute;
+    right: -40px;
+    top: 300px;
+    z-index: 2;
+}
+
+section.section-products > div.available-products > p{
 }
